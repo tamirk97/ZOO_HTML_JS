@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Comparison - My Zoo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Zoo</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="INDEX.HTML">Home</a></li>
+            <li><a href="ABOUT.HTML">About</a></li>
+            <li><a href="ANIMALS.HTML">Animals</a></li>
+            <li><a href="CONTACT.HTML">Contact</a></li>
+            <li><a href="NUMBER_COMPARISON.HTML">Number Comparison</a></li>
+            <li><a href="FIZZBUZ.HTML">FIZZBUZZ</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="number-comparison">
+            <h2>Number Comparison</h2>
+            <p>Enter two numbers below to compare them:</p>
+            <form action="#">
+                <label for="number1">Number 1:</label><br>
+                <input type="number" id="number1" name="number1"><br>
+                <label for="number2">Number 2:</label><br>
+                <input type="number" id="number2" name="number2"><br>
+                <input type="button" value="Compare" onclick="compareNumbers()">
+            </form>
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Zoo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function compareNumbers() {
+            var num1 = parseInt(document.getElementById('number1').value);
+            var num2 = parseInt(document.getElementById('number2').value);
+            var result = "";
+
+            if (num1 > num2) {
+                result = "Number 1 is bigger than Number 2.";
+            } else if (num2 > num1) {
+                result = "Number 2 is bigger than Number 1.";
+            } else {
+                result = "Both numbers are equal.";
+            }
+
+            if (num1 % 2 === 0 && num2 % 2 === 0) {
+                result += " Both numbers are even.";
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+
+</html>

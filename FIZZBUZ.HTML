@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Game</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>FizzBuzz Game</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="INDEX.HTML">Home</a></li>
+            <li><a href="ABOUT.HTML">About</a></li>
+            <li><a href="ANIMALS.HTML">Animals</a></li>
+            <li><a href="CONTACT.HTML">Contact</a></li>
+            <li><a href="NUMBER_COMPARISON.HTML">Number Comparison</a></li>
+            <li><a href="FIZZBUZ.HTML">FIZZBUZZ</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="fizzbuzz-results">
+            <!-- Results will be displayed here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My FizzBuzz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var fizzBuzzResults = document.getElementById('fizzbuzz-results');
+
+            for (var i = 1; i <= 100; i++) {
+                var paragraph = document.createElement('p');
+                paragraph.textContent = fizzBuzz(i);
+                fizzBuzzResults.appendChild(paragraph);
+            }
+        });
+
+        function fizzBuzz(num) {
+            if (num % 3 === 0 && num % 5 === 0) {
+                return "FizzBuzz";
+            } else if (num % 3 === 0) {
+                return "Fizz";
+            } else if (num % 5 === 0) {
+                return "Buzz";
+            } else {
+                return num;
+            }
+        }
+    </script>
+</body>
+
+</html>
